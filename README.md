@@ -18,7 +18,8 @@ we try to access it locally on our ubuntu shell:
 or 
 curl http://127.0.0.1:80 
 
-![poll mokup](./statusnginx.png)
+<img width="639" alt="statusnginx" src="https://user-images.githubusercontent.com/30122596/225105234-81c355ba-8529-44c0-ae55-585b181ff312.png">
+
 
 -----------------------
 You can retrieve your IP address uisng the command
@@ -28,7 +29,8 @@ Go to a web browser and open the page using the IP address
 
 > http://<Public-IP-Address>:80
 
-![poll mokup](./welcometonginx.png)
+<img width="1280" alt="welcometonginx" src="https://user-images.githubusercontent.com/30122596/225105092-7bf269cc-ef6c-4c91-8f96-45d1be7644a9.png">
+
 
 -------------------------------------
 
@@ -42,8 +44,10 @@ Go to a web browser and open the page using the IP address
   this will connect to the MySQL server as the administrative database user root, which is inferred by the use of sudo when running thus command.
   > sudo mysql
   
-  
-  ![poll mokup](./sudomysql.png)
+  <img width="639" alt="sudomysql" src="https://user-images.githubusercontent.com/30122596/225105000-12c619ed-0198-4bf9-8613-ce19b7735dc1.png">
+
+ 
+ 
   
   --------------------------
   Set a password for the root user using mysql_native_password as default authentication method 
@@ -56,7 +60,8 @@ Go to a web browser and open the page using the IP address
   it's recommend that you run a security script that comes pre-installed with MYSQL. This script will remove some insecure default settings and lock down access to your database system.
   > sudo mysql_secure_installation
   
-  ![poll mokup](./password.png)
+  <img width="1280" alt="password" src="https://user-images.githubusercontent.com/30122596/225104929-a4460767-ae72-4dd4-983e-8975f12b4ad6.png">
+
   
 
  This will ask if you want to configure the VALIDATE PASSWORD PLUGIN.
@@ -66,7 +71,9 @@ Note: Enabling this feature is something of a judgment call. If enabled, passwor
 ## Confirm Mysql was successfully installed by logging into the console
 > sudo mysql -p
 
-![poll mokup](./sudomysql-p.png)
+<img width="639" alt="sudomysql-p" src="https://user-images.githubusercontent.com/30122596/225104833-bfb6f23c-d22b-4add-92fc-2acde3f05ea0.png">
+
+
 
 ### Exit mysql
 > exit 
@@ -141,7 +148,8 @@ Activate your configuration by linking to the config file from Nginx’s sites-e
 This will tell Nginx to use the configuration next time it is reloaded. You can test your configuration for syntax errors by typing:
 >sudo nginx -t 
 
-![poll mokup](./projectLEMP.png)
+<img width="723" alt="projectLEMP" src="https://user-images.githubusercontent.com/30122596/225104661-ba30eaa9-beff-4c28-948f-b6649fc67e3c.png">
+
 
 To disable default Nginx host that is currently configured to listen on port 80 we use the command
 >sudo unlink /etc/nginx/sites-enabled/default 
@@ -156,7 +164,8 @@ $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projec
 Now go to your browser and try to open your website URL using IP address
 >http://<Public-IP-Address>:80 
 
-![poll mokup](./projectLEMP2.png)
+<img width="1280" alt="projectLEMP2" src="https://user-images.githubusercontent.com/30122596/225104567-ad1f0db1-d67b-4693-b15f-05451f81f216.png">
+
 
 ---------------------------------------
 ## TESTING PHP WITH NGINX
@@ -169,8 +178,9 @@ phpinfo();
 
 You can now access this page in your web browser
 >http://`server_domain_or_IP`/info.php 
+<img width="1280" alt="infophp" src="https://user-images.githubusercontent.com/30122596/225104461-bbb8362d-23fe-4508-b130-04a027b097b0.png">
 
-![poll mokup](./infophp.png)
+
 
 Remove the file using the following command
 >sudo rm /var/www/projectLEMP/info.php 
@@ -193,20 +203,24 @@ Now we need to give this user permission over the example_database database:
 
 Now exit the MySQL shell with
 >exit
-![poll mokup](./mysqldata.png)
+<img width="1280" alt="mysqldata" src="https://user-images.githubusercontent.com/30122596/225104356-02a3a332-f7d0-4ea7-8299-18dd6a406e3f.png">
+
+
 
 ------------------------------------
 You can test if the new user has the proper permissions by logging in to the MySQL console again
 >mysql -u example_user -p 
 
-![poll mokup](./mysql-u.png)
+<img width="555" alt="mysql-u" src="https://user-images.githubusercontent.com/30122596/225104274-8f46c87f-e418-45a7-960c-e24ab00eb29a.png">
+
 
 After logging in to the MySQL console, confirm that you have access to the example_database database
 >SHOW DATABASES; 
 
 This will give you the following output: 
 
-![poll mokup](./SHOWDATA.png)
+<img width="555" alt="SHOWDATA" src="https://user-images.githubusercontent.com/30122596/225104208-b655d1d3-9427-444d-be48-1717f644b249.png">
+
 
 --------------------------------
 Next, we’ll create a test table named todo_list. From the MySQL console, run the following statement
@@ -217,14 +231,17 @@ Insert a few rows of content in the test table. You might want to repeat the nex
 
 >INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
 
-![poll mokup](./todolist.png)
+<img width="867" alt="todolist" src="https://user-images.githubusercontent.com/30122596/225104139-61352d8d-3f9c-497d-9eb3-8bdacc6e2690.png">
+
 
 -----------------------------
 To confirm that the data was successfully saved to your table, run:
 >SELECT * FROM example_database.todo_list;
 
 This output will be shown
-![poll mokup](./todolistoutput.png)
+
+<img width="662" alt="todolistoutput" src="https://user-images.githubusercontent.com/30122596/225104061-d435a05b-8271-4718-939c-2782be3bcb66.png">
+
 
 ----------------------------
 You can exit the MySQL console after confirming valid data in your test table
@@ -280,7 +297,9 @@ You can now access this page in your web browser by visiting the domain name or 
 
 
 You should see a page like this, showing the content you’ve inserted in your test table
-![poll mokup](./output.png)
+
+<img width="654" alt="output" src="https://user-images.githubusercontent.com/30122596/225103834-315a6469-d740-43a1-80e4-cb14d19d81e5.png">
+
 
 ----------------------------------------
 That means your PHP environment is ready to connect and interact with your MySQL server.# jk
